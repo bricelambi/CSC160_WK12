@@ -14,6 +14,17 @@ STUDENT: Write a function that will take two vectors of int
          the same numbers in the same order) and false if they
          are not equal
 */
+bool areEqual(vector<int> a, vector<int> b) {
+  if (a.size() != b.size()) {
+    return false;
+  }
+  for (int i = 0; i < a.size(); i++) {
+    if (a[i] != b[i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
 /*
 STUDENT: Write a function that will take two vectors of int
@@ -46,17 +57,17 @@ int main() {
   vec_a.push_back(9);
   vec_a.push_back(3);
   vec_a.push_back(5);
-  vec_a.push_back(4); 
+  vec_a.push_back(4);
   vec_a.push_back(0);
 
   //USE THIS EXAMPLE TO "SLICE" A VECTOR
   vector<int> small_a(vec_a.begin()+1, vec_a.end());
-
+  
   vector<int> small_b(vec_a.begin()+3, vec_a.end()-3);
 
-  printVector(vec_a);
-  printVector(small_a);
-  printVector(small_b);
+  // printVector(vec_a);
+  // printVector(small_a);
+  // printVector(small_b);
 
   vec_b.push_back(4);
   vec_b.push_back(2);
@@ -67,7 +78,6 @@ int main() {
   vec_d.push_back(5);
   vec_d.push_back(8);
   vec_d.push_back(2);
-
 
   /*
   STUDENT: Use your function to test if vec_b, vec_c, vec_d are within vec_a
